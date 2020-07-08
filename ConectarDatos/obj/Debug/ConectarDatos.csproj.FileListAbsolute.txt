@@ -1,0 +1,12 @@
+C:\Users\moiso\Desktop\Prueba\Prueba\ConectarDatos\bin\Debug\ConectarDatos.dll.config
+C:\Users\moiso\Desktop\Prueba\Prueba\ConectarDatos\bin\Debug\ConectarDatos.dll
+C:\Users\moiso\Desktop\Prueba\Prueba\ConectarDatos\bin\Debug\ConectarDatos.pdb
+C:\Users\moiso\Desktop\Prueba\Prueba\ConectarDatos\bin\Debug\EntityFramework.dll
+C:\Users\moiso\Desktop\Prueba\Prueba\ConectarDatos\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\moiso\Desktop\Prueba\Prueba\ConectarDatos\bin\Debug\EntityFramework.xml
+C:\Users\moiso\Desktop\Prueba\Prueba\ConectarDatos\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\moiso\Desktop\Prueba\Prueba\ConectarDatos\obj\Debug\ConectarDatos.csproj.CoreCompileInputs.cache
+C:\Users\moiso\Desktop\Prueba\Prueba\ConectarDatos\obj\Debug\ConectarDatos.csproj.CopyComplete
+C:\Users\moiso\Desktop\Prueba\Prueba\ConectarDatos\obj\Debug\ConectarDatos.dll
+C:\Users\moiso\Desktop\Prueba\Prueba\ConectarDatos\obj\Debug\ConectarDatos.pdb
+C:\Users\moiso\Desktop\Prueba\Prueba\ConectarDatos\obj\Debug\ConectarDatos.csprojAssemblyReference.cache

@@ -1,0 +1,68 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="PruebaDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Rol">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Rol1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Usuario_Rol" Relationship="Self.FK_Usuario_Rol_Rol" FromRole="Rol" ToRole="Usuario_Rol" />
+  </EntityType>
+  <EntityType Name="Usuario">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Correo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Contraseña" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Usuario_Rol" Relationship="Self.FK_Usuario_Rol_Usuario" FromRole="Usuario" ToRole="Usuario_Rol" />
+  </EntityType>
+  <EntityType Name="Usuario_Rol">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ID_Usuario" Type="Int32" />
+    <Property Name="ID_Rol" Type="Int32" />
+    <NavigationProperty Name="Rol" Relationship="Self.FK_Usuario_Rol_Rol" FromRole="Usuario_Rol" ToRole="Rol" />
+    <NavigationProperty Name="Usuario" Relationship="Self.FK_Usuario_Rol_Usuario" FromRole="Usuario_Rol" ToRole="Usuario" />
+  </EntityType>
+  <Association Name="FK_Usuario_Rol_Rol">
+    <End Role="Rol" Type="Self.Rol" Multiplicity="0..1" />
+    <End Role="Usuario_Rol" Type="Self.Usuario_Rol" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Rol">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Usuario_Rol">
+        <PropertyRef Name="ID_Rol" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Usuario_Rol_Usuario">
+    <End Role="Usuario" Type="Self.Usuario" Multiplicity="0..1" />
+    <End Role="Usuario_Rol" Type="Self.Usuario_Rol" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Usuario">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Usuario_Rol">
+        <PropertyRef Name="ID_Usuario" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="PruebaDBEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Rols" EntityType="Self.Rol" />
+    <EntitySet Name="Usuarios" EntityType="Self.Usuario" />
+    <EntitySet Name="Usuario_Rol" EntityType="Self.Usuario_Rol" />
+    <AssociationSet Name="FK_Usuario_Rol_Rol" Association="Self.FK_Usuario_Rol_Rol">
+      <End Role="Rol" EntitySet="Rols" />
+      <End Role="Usuario_Rol" EntitySet="Usuario_Rol" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Usuario_Rol_Usuario" Association="Self.FK_Usuario_Rol_Usuario">
+      <End Role="Usuario" EntitySet="Usuarios" />
+      <End Role="Usuario_Rol" EntitySet="Usuario_Rol" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

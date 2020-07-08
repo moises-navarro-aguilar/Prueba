@@ -1,0 +1,58 @@
+﻿@model ConectarDatos.Usuario
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link href="~/Styles/font-awesome.min.css" rel="stylesheet" />
+    <link href="~/Styles/style.css" rel="stylesheet" />
+    <title>Index</title>
+</head>
+<body>
+    <div class="form">
+
+        <h1>Prueba Datasoft</h1>
+        <div class="form-content">
+
+            <form action="/Login/Autherize" method="post">
+                @{
+                    if (!string.IsNullOrEmpty(ViewBag.Message))
+                    {
+                        <div class="alert alert-danger">@ViewBag.Message</div>
+                    };
+                }
+
+                <div class="form-info">
+                    <h2>Login</h2>
+                </div>
+                <div class="email-w3l">
+                    <span class="i1"><i class="fa fa-envelope-o" aria-hidden="true"></i></span>
+                    @Html.LabelFor(model => model.Correo, new { @class = "email" });
+                    @Html.EditorFor(model => model.Correo, new { @class = "i1" });
+                    @Html.ValidationMessageFor(model => model.Correo);
+                </div>
+                <div class="pass-w3l">
+                    <span class="i2"><i class="fa fa-unlock" aria-hidden="true"></i></span>
+                    @Html.LabelFor(model => model.Contraseña, new { @class = "pass" });
+                    @Html.EditorFor(model => model.Contraseña, new { @class = "i2" });
+                    @Html.ValidationMessageFor(model => model.Contraseña);
+                </div>
+                <div class="submit-agileits">
+                    <input class="login" type="submit" value="login">
+                </div>
+
+            </form>
+        </div>
+    </div>
+    <!---728x90--->
+    <footer>&copy; Design by <a href="#">W3layouts</a></footer>
+    <!---728x90--->
+    <script src="~/Scripts/jquery-3.4.1.min.js"></script>
+    <script src="~/Scripts/jquery.validate.js"></script>
+    <script src="~/Scripts/jquery.validate.min.js"></script>
+</body>
+</html>
