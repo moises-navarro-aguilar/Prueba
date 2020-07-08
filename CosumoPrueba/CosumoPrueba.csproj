@@ -270,6 +270,9 @@
     <Content Include="Views\RolModels\Delete.cshtml" />
     <Content Include="Views\RolModels\Edit.cshtml" />
     <Content Include="Views\Usuario_RolModel\Index.cshtml" />
+    <Content Include="Views\Usuario_RolModel\Create.cshtml" />
+    <Content Include="Views\Usuario_RolModel\Delete.cshtml" />
+    <Content Include="Views\Usuario_RolModel\Edit.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
